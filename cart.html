@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shopping Basket | Click Basket</title>
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="index.html" class="logo" id="logo-link">Click Basket</a>
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link">Shop</a>
+                    <a href="index.html#deals" class="nav-link">Deals</a>
+                </nav>
+            </div>
+            
+            <div class="header-center">
+                <div class="search-bar-wrapper">
+                    <input type="text" id="search-input" placeholder="Search products..." aria-label="Search products">
+                    <button class="search-btn" aria-label="Submit search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                    <!-- Mock Autocomplete -->
+                    <div class="search-dropdown" id="search-dropdown">
+                        <div class="dropdown-item">Trending: running shoes</div>
+                        <div class="dropdown-item">Trending: smart watch</div>
+                        <div class="dropdown-item">Trending: wireless earbuds</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <a href="cart.html" class="header-icon-btn cart-btn" id="cart-icon-container" aria-label="Shopping Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff5722" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cart-svg">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-badge" id="cart-badge">2</span>
+                </a>
+                <a href="#" class="header-icon-btn profile-btn" aria-label="User Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="cart-page-container">
+        <h1 class="page-title">Your Shopping Basket</h1>
+
+        <div class="cart-layout">
+            <!-- Left Side: Cart Items -->
+            <div class="cart-items-column">
+                <div class="items-list" id="items-list">
+                    <!-- Product Item 1: Ultra-Speed Runner X2 -->
+                    <div class="cart-item-card" data-id="runner" data-price="129.00">
+                        <div class="item-image-wrapper">
+                            <img src="assets/ultra_speed_runner_x2.png" alt="Ultra-Speed Runner X2" class="item-img">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header-row">
+                                <h2 class="item-name">Ultra-Speed Runner X2</h2>
+                                <span class="item-price">$129.00</span>
+                            </div>
+                            <div class="item-specs-row">
+                                <p class="item-specs">Size: 42 | Color: Crimson</p>
+                            </div>
+                            <div class="item-actions-row">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus-btn" aria-label="Decrease quantity">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                    </button>
+                                    <span class="qty-val">1</span>
+                                    <button class="qty-btn plus-btn" aria-label="Increase quantity">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                    </button>
+                                </div>
+                                <button class="remove-btn" aria-label="Remove item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trash-icon"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                                    Remove
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Item 2: Zenith Core Smartwatch -->
+                    <div class="cart-item-card" data-id="smartwatch" data-price="299.00">
+                        <div class="item-image-wrapper">
+                            <img src="assets/zenith_core_smartwatch.png" alt="Zenith Core Smartwatch" class="item-img">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header-row">
+                                <h2 class="item-name">Zenith Core Smartwatch</h2>
+                                <span class="item-price">$299.00</span>
+                            </div>
+                            <div class="item-specs-row">
+                                <p class="item-specs">Edition: Sport | Silver</p>
+                            </div>
+                            <div class="item-actions-row">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus-btn" aria-label="Decrease quantity">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                    </button>
+                                    <span class="qty-val">1</span>
+                                    <button class="qty-btn plus-btn" aria-label="Increase quantity">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                    </button>
+                                </div>
+                                <button class="remove-btn" aria-label="Remove item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trash-icon"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                                    Remove
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gift Wrap Option Card -->
+                <div class="gift-wrap-card" id="gift-card">
+                    <div class="gift-left">
+                        <div class="gift-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="gift-box-svg">
+                                <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                                <rect x="2" y="7" width="20" height="5"></rect>
+                                <line x1="12" y1="22" x2="12" y2="7"></line>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                            </svg>
+                        </div>
+                        <div class="gift-text">
+                            <h3 class="gift-title">Add a gift wrap?</h3>
+                            <p class="gift-desc">Make it special for only $5.00</p>
+                        </div>
+                    </div>
+                    <button class="add-wrap-btn" id="gift-wrap-btn">Add Wrap</button>
+                </div>
+
+                <!-- Payment Method Card -->
+                <div class="payment-method-card" id="payment-card">
+                    <h3 class="payment-card-title">Payment Method</h3>
+                    <div class="payment-tabs">
+                        <button class="payment-tab-btn active" data-tab="card" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tab-icon">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                <line x1="1" y1="10" x2="23" y2="10"></line>
+                            </svg>
+                            Credit Card
+                        </button>
+                        <button class="payment-tab-btn" data-tab="paypal" type="button">
+                            <span class="paypal-text-logo"><i>Pay</i><i>Pal</i></span>
+                        </button>
+                        <button class="payment-tab-btn" data-tab="gpay" type="button">
+                            <span class="gpay-text-logo">Google Pay</span>
+                        </button>
+                    </div>
+
+                    <div class="payment-tab-content active" id="tab-card">
+                        <div class="card-checkout-wrapper">
+                            <!-- Virtual Card Live Preview -->
+                            <div class="virtual-card-container">
+                                <div class="virtual-card" id="virtual-card">
+                                    <div class="card-front">
+                                        <div class="card-reflection"></div>
+                                        <div class="card-header-row">
+                                            <span class="card-chip"></span>
+                                            <span class="card-logo" id="card-brand-logo">Visa</span>
+                                        </div>
+                                        <div class="card-number-display" id="card-num-display">•••• •••• •••• ••••</div>
+                                        <div class="card-footer-row">
+                                            <div class="card-holder-display">
+                                                <span class="card-label">CARDHOLDER</span>
+                                                <span class="card-val" id="card-name-display">YOUR NAME</span>
+                                            </div>
+                                            <div class="card-expiry-display">
+                                                <span class="card-label">EXPIRES</span>
+                                                <span class="card-val" id="card-date-display">MM/YY</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card Inputs Form -->
+                            <div class="card-inputs-form">
+                                <div class="input-group">
+                                    <label for="card-holder-name">Cardholder Name</label>
+                                    <input type="text" id="card-holder-name" placeholder="John Doe" autocomplete="cc-name" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="card-number">Card Number</label>
+                                    <div class="input-with-icon">
+                                        <input type="text" id="card-number" placeholder="4000 1234 5678 9010" maxlength="19" autocomplete="cc-number" required>
+                                        <span class="input-card-brand" id="input-brand-icon"></span>
+                                    </div>
+                                </div>
+                                <div class="input-row">
+                                    <div class="input-group half-width">
+                                        <label for="card-expiry">Expiry Date</label>
+                                        <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" autocomplete="cc-exp" required>
+                                    </div>
+                                    <div class="input-group half-width">
+                                        <label for="card-cvv">CVV</label>
+                                        <input type="password" id="card-cvv" placeholder="•••" maxlength="4" autocomplete="cc-csc" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment-tab-content" id="tab-paypal">
+                        <div class="paypal-content-wrapper">
+                            <p class="paypal-info-text">Click the button below to pay securely with your PayPal account or Credit Card.</p>
+                            <div class="paypal-btn-container-wrapper">
+                                <div id="paypal-button-container"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment-tab-content" id="tab-gpay">
+                        <div class="gpay-content-wrapper">
+                            <p class="gpay-info-text">Pay securely using card or bank credentials stored directly in your Google Account.</p>
+                            <div class="gpay-mock-btn-container">
+                                <button class="gpay-checkout-mock-btn" type="button">
+                                    <span class="gpay-btn-logo"></span> Buy with G Pay
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Order Summary -->
+            <div class="summary-column">
+                <div class="summary-card">
+                    <h2 class="summary-title">Order Summary</h2>
+                    
+                    <div class="summary-row">
+                        <span class="summary-label">Subtotal</span>
+                        <span class="summary-value" id="summary-subtotal">$428.00</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span class="summary-label">Shipping Estimation</span>
+                        <span class="summary-value shipping-free" id="summary-shipping">FREE</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span class="summary-label">Tax Estimation</span>
+                        <span class="summary-value" id="summary-tax">$34.24</span>
+                    </div>
+
+                    <div class="summary-divider"></div>
+                    
+                    <div class="summary-row total-row">
+                        <span class="summary-label total-label">Total</span>
+                        <span class="summary-value total-value" id="summary-total">$462.24</span>
+                    </div>
+                    
+                    <button class="checkout-btn" id="checkout-btn">
+                        <span class="btn-text">Proceed to Checkout</span>
+                        <span class="btn-spinner" style="display: none;"></span>
+                    </button>
+                    
+                    <div class="delivery-time-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="truck-svg">
+                            <rect x="1" y="3" width="15" height="13"></rect>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                        </svg>
+                        <span>Delivered by Tuesday, Oct 24</span>
+                    </div>
+                    
+                    <!-- Secure Payment Banner -->
+                    <div class="secure-badge-card">
+                        <p class="secure-badge-title">SECURE PAYMENT GUARANTEED</p>
+                        <div class="secure-icons">
+                            <div class="secure-icon-item" title="Trust Badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <path d="M12 14c-.2 0-.4-.1-.5-.2-1.5-1.5-2.5-2.7-2.5-3.8 0-1 .8-1.8 1.8-1.8.6 0 1.1.3 1.2.7.1-.4.6-.7 1.2-.7 1 0 1.8.8 1.8 1.8 0 1.1-1 2.3-2.5 3.8-.1.1-.3.2-.5.2z" fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <div class="secure-icon-item" title="Credit Card Secure">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                                </svg>
+                            </div>
+                            <div class="secure-icon-item" title="Verified Security">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <polyline points="9 11 11 13 15 9"></polyline>
+                                </svg>
+                            </div>
+                            <div class="secure-icon-item" title="SSL Encrypted">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="help-text">Need help? <a href="#" id="chat-link">Chat with us</a> or call 1-800-CLICK-BASKET</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col brand-col">
+                <h2 class="footer-logo"><a href="index.html" style="color: white; text-decoration: none;">Click Basket</a></h2>
+                <p class="brand-desc">Premium essentials delivered at light speed. Your everyday marketplace for modern living.</p>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title">SHOP</h3>
+                <ul>
+                    <li><a href="index.html#benefits">Returns Policy</a></li>
+                    <li><a href="index.html#benefits">Free Shipping</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title">SUPPORT</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Secure Pay</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title">LEGAL</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Click Basket. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Custom Toast Notification -->
+    <div class="toast" id="toast-message">
+        <div class="toast-content">
+            <svg class="toast-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 8 12 12 16 14"></polyline>
+            </svg>
+            <span class="toast-text" id="toast-text-content">Cart updated successfully!</span>
+        </div>
+    </div>
+
+    <!-- Interactive Checkout Modal -->
+    <div class="modal-overlay" id="checkout-modal">
+        <div class="modal-card success-modal-card">
+            <button class="modal-close-btn" id="modal-close" aria-label="Close modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal-success-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="9 11 11 13 15 9"></polyline>
+                </svg>
+            </div>
+            <h2 class="modal-title">Checkout Successful!</h2>
+            <p class="modal-body-text">Thank you for your order. We are processing your payment of <strong id="modal-total-amt">$462.24</strong>. A confirmation email has been sent to your inbox.</p>
+            
+            <!-- Dynamic Receipt Container -->
+            <div class="receipt-container" id="receipt-container">
+                <div class="receipt-paper">
+                    <div class="receipt-header">
+                        <span class="receipt-brand">CLICK BASKET</span>
+                        <span class="receipt-tagline">OFFICIAL RECEIPT</span>
+                    </div>
+                    
+                    <div class="receipt-divider"></div>
+                    
+                    <div class="receipt-meta">
+                        <div class="receipt-meta-row">
+                            <span>Receipt No:</span>
+                            <span id="receipt-id">CB-XXXX-XXXX</span>
+                        </div>
+                        <div class="receipt-meta-row">
+                            <span>Date:</span>
+                            <span id="receipt-date">Oct 24, 2026, 9:24 PM</span>
+                        </div>
+                        <div class="receipt-meta-row">
+                            <span>Payment:</span>
+                            <span id="receipt-payment-type">Credit Card (Ending in 1111)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="receipt-divider"></div>
+                    
+                    <div class="receipt-items" id="receipt-items-list">
+                        <!-- Items populated dynamically by JS -->
+                    </div>
+                    
+                    <div class="receipt-divider"></div>
+                    
+                    <div class="receipt-totals">
+                        <div class="receipt-total-row">
+                            <span>Subtotal:</span>
+                            <span id="receipt-subtotal">$428.00</span>
+                        </div>
+                        <div class="receipt-total-row">
+                            <span>Shipping:</span>
+                            <span id="receipt-shipping">FREE</span>
+                        </div>
+                        <div class="receipt-total-row">
+                            <span>Tax (8%):</span>
+                            <span id="receipt-tax">$34.24</span>
+                        </div>
+                        <div class="receipt-total-row receipt-grand-total">
+                            <span>GRAND TOTAL:</span>
+                            <span id="receipt-grand-total-val">$462.24</span>
+                        </div>
+                    </div>
+                    
+                    <div class="receipt-footer">
+                        <div class="barcode"></div>
+                        <span class="receipt-thanks">Thank you for shopping with us!</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="modal-btn" id="modal-ok-btn">Awesome!</button>
+        </div>
+    </div>
+
+    <!-- Interactive OTP / 3D Secure Verification Modal -->
+    <div class="modal-overlay" id="otp-modal">
+        <div class="modal-card otp-card">
+            <h2 class="otp-title">Secure 3D Verification</h2>
+            <p class="otp-subtitle">A verification code has been sent to your registered mobile number ending in <strong>*8892</strong>. Please enter the code below to authorize this payment.</p>
+            
+            <div class="otp-inputs-wrapper">
+                <input type="text" class="otp-field" maxlength="1" placeholder="•" data-index="1" autofocus>
+                <input type="text" class="otp-field" maxlength="1" placeholder="•" data-index="2">
+                <input type="text" class="otp-field" maxlength="1" placeholder="•" data-index="3">
+                <input type="text" class="otp-field" maxlength="1" placeholder="•" data-index="4">
+            </div>
+
+            <div class="otp-timer-row">
+                Resend code in <span id="otp-timer-count">30</span>s
+            </div>
+
+            <div class="otp-btn-row">
+                <button type="button" class="otp-cancel-btn" id="otp-cancel-btn">Cancel</button>
+                <button type="button" class="otp-submit-btn" id="otp-submit-btn" disabled>Verify Payment</button>
+            </div>
+            
+            <div class="otp-shortcut-row">
+                <button type="button" class="otp-shortcut-btn" id="otp-shortcut-btn">Auto-fill Code (1234)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+    <script src="app.js"></script>
+</body>
+</html>
